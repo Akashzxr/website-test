@@ -32,7 +32,11 @@ export const DataSlice = createSlice({
           state.itemcount+=1;
         },
         decrement:(state)=>{
-            state.itemcount-=1;
+            if(state.itemcount===0){
+                state.itemcount=0;
+            }else{
+                state.itemcount-=1;
+            }
         },
     },
     extraReducers: (builder) => {
