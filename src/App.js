@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
 import { useEffect} from 'react';
 import { useDispatch , useSelector} from 'react-redux';
 import { FetchData } from './State/DataSlice';
@@ -13,8 +14,14 @@ function App() {
   },[])
   
   return (
-    <div className="App">
-      {isLoaded ? <Header/> : <div>loading</div>}
+    <div>
+      {isLoaded ? 
+          <div className="App">
+            <Header/>
+            <Main/>
+          </div>
+       
+       : <div>loading</div>}
     </div>
   );
   

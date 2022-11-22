@@ -6,6 +6,7 @@ import { DataFetch } from "./DataFetch";
 const initialState = {
    data:'',
    isLoaded:false,
+   category:0,
 }
 
 //fetching data
@@ -22,7 +23,9 @@ export const DataSlice = createSlice({
     name: "Data",
     initialState,
     reducers:{
-        
+        setCategory:(state,action)=>{
+            state.category = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -32,6 +35,7 @@ export const DataSlice = createSlice({
         .addCase(FetchData.fulfilled, (state,action)=>{
             state.data=action.payload;
             console.log(state.data[0])
+            console.log(state.category)
             state.isLoaded= true;
         })
         .addCase(FetchData.rejected, (state)=>{
@@ -41,5 +45,5 @@ export const DataSlice = createSlice({
     }
 });
 
-
+export const { setCategory } = DataSlice.actions;
 export default DataSlice.reducer
