@@ -1,0 +1,45 @@
+.Heading-Container{
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.myorders-cart-container{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    padding-right: 20px;
+}
+
+.My-Orders-btn{
+    white-space: nowrap;
+    background: inherit;
+    border: none;
+    color: grey;
+    font-size: 16px;
+}
+
+.My-Orders-btn:hover{
+    color: rgb(31, 30, 30);
+}
+
+.Cart-Icon{
+    font-size: 40px;
+ }
+
+.Cart-Count{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  position: relative;
+  bottom: 8px;
+  right: 12px;
+ }
