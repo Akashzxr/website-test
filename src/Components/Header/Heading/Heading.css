@@ -43,3 +43,25 @@
   bottom: 8px;
   right: 12px;
  }
+
+ 
+
+ @media screen and (max-width:600px) {
+    .Restaurant-name{
+        font-size: 20px;
+     }
+
+     .Cart-Icon{
+        font-size: 25px;
+     }
+    
+     .Cart-Count{
+        width: 20px;
+        height: 18px;
+       }
+
+    .myorders-cart-container{
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+ }
