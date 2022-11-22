@@ -1,6 +1,7 @@
 import "./Category.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategory } from "../../../State/DataSlice";
+import { useEffect } from "react";
 
 function Category() {
     const  {data, category}  = useSelector((state)=>state.Data);
@@ -12,17 +13,24 @@ function Category() {
         console.log(category)
     }
 
+    useEffect(()=>{
+
+    },[category])
+
   return (
     <div className="Category-Container">
 
-        {Mappingdata.map((category,index)=>{
+        {Mappingdata.map((items,index)=>{
                 return(
                     <a href="#"
+                     style={ {color: category===index ? "red" : "grey",
+                              borderColor: category===index ? "red" : "grey" 
+                            }}
                      className="category" 
                      key={index} 
                      onClick={()=>{onclick(index)}}
                     >
-                        {category.menu_category}
+                        {items.menu_category}
                     </a>
                 )
         })}

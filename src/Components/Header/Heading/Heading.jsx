@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Heading() {
 
-  const  {data}  = useSelector((state)=>state.Data);
+  const  {data, itemcount}  = useSelector((state)=>state.Data);
 
 
   return (
@@ -18,7 +18,7 @@ function Heading() {
           
             <button className="My-Orders-btn" >My Orders</button>
             <FaShoppingCart className="Cart-Icon" />
-            <span className="Cart-Count">0</span>
+            <span className="Cart-Count">{itemcount}</span>
 
         </div>
 

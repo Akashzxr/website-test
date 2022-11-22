@@ -7,6 +7,8 @@ const initialState = {
    data:'',
    isLoaded:false,
    category:0,
+   itemcount: 0,
+   newc: [],
 }
 
 //fetching data
@@ -25,7 +27,13 @@ export const DataSlice = createSlice({
     reducers:{
         setCategory:(state,action)=>{
             state.category = action.payload;
-        }
+        },
+        increment:(state)=>{
+          state.itemcount+=1;
+        },
+        decrement:(state)=>{
+            state.itemcount-=1;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -45,5 +53,5 @@ export const DataSlice = createSlice({
     }
 });
 
-export const { setCategory } = DataSlice.actions;
+export const { setCategory ,increment,decrement} = DataSlice.actions;
 export default DataSlice.reducer
