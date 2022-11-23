@@ -1,24 +1,31 @@
 import "./Button.css";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { increment, decrement } from "../../../../State/DataSlice";
 import { useState } from "react";
 
 function Button() {
-  
- const Dispatch = useDispatch();
+  let [count,setcount] = useState(0);
+  const Dispatch = useDispatch();
  
  
  const Countincrement=()=>{
     Dispatch(increment())
+    setcount(count+=1);
  }
+ 
  const Countdecrement=()=>{
   Dispatch(decrement())
+  if(count==0){
+    setcount(0);
+  }else{
+    setcount(count-=1);
+  }
 }
 
   return (
     <div className="button-container">
        <button onClick={Countdecrement}>-</button>
-        <span>0</span>
+        <span>{count}</span>
        <button onClick={Countincrement}>+</button>
     </div>
   )
