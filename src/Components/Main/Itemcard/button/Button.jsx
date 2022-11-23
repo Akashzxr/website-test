@@ -14,11 +14,11 @@ function Button() {
  }
  
  const Countdecrement=()=>{
-  Dispatch(decrement())
-  if(count==0){
+  if(count===0){
     setcount(0);
   }else{
     setcount(count-=1);
+    Dispatch(decrement())
   }
 }
 

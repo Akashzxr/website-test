@@ -15,7 +15,7 @@ function ItemCard(props) {
     const length      = item.addonCat.length;
     const calories    = item.dish_calories;
     const image       = item.dish_image;
-    const id          = item.dish_id;
+    
 
     useEffect(()=>{
         if(item.dish_Type===1){
@@ -42,7 +42,7 @@ function ItemCard(props) {
   
                  {available ? <Button /> : <div className="message">Not available</div>}
                   
-                  {length!=0 
+                  {length!==0 
                     ? <span className="message">customization available</span>
                     : null
                   }
